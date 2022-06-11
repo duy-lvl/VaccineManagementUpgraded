@@ -6,10 +6,10 @@ import util.Utils;
 public class StudentVaccinationManagementUpgraded {
 
     public static void main(String[] args) {
-        final String STUDENT_VACCINE_OUT = "StudentVaccineOut.txt";
-        final String STUDENT_LIST = "Student.txt";
-        final String VACCINE_LIST = "Vaccine.txt";
-        final String STUDENT_VACCINE_IN = "StudentVaccineIn.txt";
+        final String STUDENT_VACCINE_OUT = "injection-out.txt";
+        final String STUDENT_LIST = "student.txt";
+        final String VACCINE_LIST = "vaccine.txt";
+        final String STUDENT_VACCINE_IN = "injection.txt";
         int choice;
         StudentVaccineList list = new StudentVaccineList();
         System.out.println("Welcome to vaccination management with Real time processing and Information Encryption!");
