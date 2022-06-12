@@ -1,5 +1,6 @@
 package data;
 
+import injecttion.InjectionInterface;
 import security.SymmetricSecurity;
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 import util.Utils;
 
-public class StudentVaccineList {
+public class StudentVaccineList implements InjectionInterface{
     
     private ArrayList<StudentVaccine> list = new ArrayList();
     private final int N_POS = 3;
@@ -77,7 +78,8 @@ public class StudentVaccineList {
     }
 
     //--------
-    public void readFromFileIn(String fileIn) {
+    @Override
+    public void readFromFile(String fileIn) {
         try {
             File vaccineFile = new File(fileIn);
             if (!vaccineFile.exists()) {
@@ -136,6 +138,7 @@ public class StudentVaccineList {
     }
 
     //---------2----------------------------------
+    @Override
     public void addInjectionInformation(String STUDENT_LIST, String VACCINE_LIST) {
         if (list.isEmpty()) {
             System.out.println("The list is empty!");
@@ -260,7 +263,8 @@ public class StudentVaccineList {
     }
 
     //-------------3-----------------------
-    public void update() {
+    @Override
+    public void updateInjectionInformation() {
         if (list.isEmpty()) {
             System.out.println("The list is empty!");
             return;
@@ -325,7 +329,8 @@ public class StudentVaccineList {
     }
 
     //-----------------4--------------------
-    public void delete() {
+    @Override
+    public void deleteInjection() {
         if (list.isEmpty()) {
             System.out.println("The list is empty!");
             return;
@@ -354,6 +359,7 @@ public class StudentVaccineList {
     }
 
     //-----------5.1---------------------
+    @Override
     public void searchByStudentID() {
         if (list.isEmpty()) {
             System.out.println("The list is empty!");
@@ -374,6 +380,7 @@ public class StudentVaccineList {
     }
 
     //------------------5.2------------
+    @Override
     public void searchByStudentName() {
         if (list.isEmpty()) {
             System.out.println("The list is empty!");
@@ -470,6 +477,7 @@ public class StudentVaccineList {
     }
 
     //-------------6-------------------
+    @Override
     public boolean writeToFileOut(String fileName) {
         if (list.isEmpty()) {
             //System.out.println("The list is empty.\n");
@@ -488,6 +496,7 @@ public class StudentVaccineList {
         return false;
     }
     
+    @Override
     public boolean writeToFileIn(String fileName) {
         if (list.isEmpty()) {
             //System.out.println("The list is empty.\n");

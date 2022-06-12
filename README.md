@@ -49,7 +49,7 @@ processing
 
 ## Updated: version 2.0
 
-#### F.5.1: Search by student name
+#### Function 5.1: Search by student name
 + Doctor input student name want to search.
 + The system will search in the list, and return all injection information that has student name
 	contain the search string.

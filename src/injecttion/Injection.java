@@ -1,9 +1,9 @@
-package vaccination_management;
+package injecttion;
 
 import data.StudentVaccineList;
 import util.Utils;
 
-public class StudentVaccinationManagementUpgraded {
+public class Injection {
 
     public static void main(String[] args) {
         final String STUDENT_VACCINE_OUT = "injection-out.txt";
@@ -20,33 +20,33 @@ public class StudentVaccinationManagementUpgraded {
 
                 switch (choice) {
                     case 1: //Show information all students have been injected.
-                        list.readFromFileIn(STUDENT_VACCINE_IN);
+                        list.readFromFile(STUDENT_VACCINE_IN);
                         list.formattedDisplay();
                         System.out.println();
                         break;
                     case 2: //Add student's vaccine injection information.
-                        list.readFromFileIn(STUDENT_VACCINE_IN);
+                        list.readFromFile(STUDENT_VACCINE_IN);
                         list.addInjectionInformation(STUDENT_LIST, VACCINE_LIST);
                         System.out.println();
                         list.writeToFileOut(STUDENT_VACCINE_OUT);
                         list.writeToFileIn(STUDENT_VACCINE_IN);
                         break;
                     case 3: //Updating information of students' vaccine injection.
-                        list.readFromFileIn(STUDENT_VACCINE_IN);
-                        list.update();
+                        list.readFromFile(STUDENT_VACCINE_IN);
+                        list.updateInjectionInformation();
                         System.out.println();
                         list.writeToFileOut(STUDENT_VACCINE_OUT);
                         list.writeToFileIn(STUDENT_VACCINE_IN);
                         break;
                     case 4: //Delete student vaccine injection information.
-                        list.readFromFileIn(STUDENT_VACCINE_IN);
-                        list.delete();
+                        list.readFromFile(STUDENT_VACCINE_IN);
+                        list.deleteInjection();
                         System.out.println();
                         list.writeToFileOut(STUDENT_VACCINE_OUT);
                         list.writeToFileIn(STUDENT_VACCINE_IN);
                         break;
                     case 5: //Search for injection information by student ID.
-                        list.readFromFileIn(STUDENT_VACCINE_IN);
+                        list.readFromFile(STUDENT_VACCINE_IN);
                         Utils.printCase5Submenu();
                         int subChoice = Utils.getChoice("Enter your choice: ", 1, 2, "Your choice must be 1 or 2!");
                         if (subChoice == 1) {
